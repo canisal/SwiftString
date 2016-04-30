@@ -43,6 +43,11 @@ public extension String {
         return capitalizedString
     }
     
+    // Turkish "i" uppercase equals "İ" and "I" lowercase equals "ı", can be used for other language capitalization as well 
+    func capitalizeLocale(language: String = "tr_TR") -> String {
+        return capitalizedStringWithLocale(NSLocale(localeIdentifier: language))
+    }
+    
     func contains(substring: String) -> Bool {
         return rangeOfString(substring) != nil
     }
